@@ -1,0 +1,61 @@
+.input {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    position: relative;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 0.1rem;
+
+    &__header {
+        text-transform: capitalize;
+        font-family: 'PT Sans', sans-serif;
+        margin-bottom: 1rem;
+    }
+
+    &__span {
+        text-transform: lowercase;
+        font-size: 0.9em;
+        color: darkgray;
+        font-weight: normal;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__submit {
+        margin-top: 1rem;
+    }
+
+    input[type='text'],
+    input[type='number'],
+    input[type='color'],
+    input[type='date'] {
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border-radius: 1rem;
+        border: 1px solid darkgray;
+        padding: 0.2rem 0.5rem;
+        box-sizing: border-box;
+        height: 1.7rem;
+        min-width: 6rem;
+
+        &:focus {
+            outline: none;
+            border-width: 2px;
+        }
+    }
+
+    input[type='color']::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    input[type='color']::-webkit-color-swatch {
+        border: none;
+        border-radius: 1rem;
+    }
+}

@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    @media (min-width: 640px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        padding: 0 1.5rem;
+    }
+}

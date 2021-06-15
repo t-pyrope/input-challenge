@@ -1,0 +1,50 @@
+.button {
+    border: none;
+    border-radius: 0.3rem;
+    transition: background-color 300ms ease;
+    letter-spacing: 0.02rem;
+    &_add {
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        background-color: $dark-blue;
+
+        &:hover {
+            background-color: $dark-blue-2;
+        }
+        @media (min-width: 640px) {
+            font-size: 1rem;
+        }
+    }
+
+    &_trash {
+        background-image: url('../../images/icons/trash.png');
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 5%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        background-color: $grey;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        &:hover {
+            background-color: $grey-2;
+        }
+    }
+
+    &_small {
+        background-color: $red;
+        padding: 0.2rem 1rem;
+        color: white;
+        border-radius: 1rem;
+
+        &:disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
+}
