@@ -1,5 +1,7 @@
 # Input challenge
 
+Link: [input challenge app on gh-pages](https://t-pyrope.github.io/input-challenge/)
+
 This app is created via [create-react-app](https://www.npmjs.com/package/create-react-app). It dynamically addes inputs on the page.
 
 ### Some of additionally used modules:
@@ -8,7 +10,7 @@ This app is created via [create-react-app](https://www.npmjs.com/package/create-
 * [randomcolor](https://www.npmjs.com/package/randomcolor-browser) for color generating
 * [uuidv4](https://www.npmjs.com/package/uuidv4) to generate ids
 * [prop-types](https://www.npmjs.com/package/prop-types) to check for React props
-
+* [gh-pages](https://www.npmjs.com/package/gh-pages) for publishing
 
 ### Usage
 ```
