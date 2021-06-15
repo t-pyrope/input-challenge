@@ -46,5 +46,9 @@
             pointer-events: none;
             opacity: 0.5;
         }
+
+        &:hover {
+            background-color: $red-2;
+        }
     }
 }
