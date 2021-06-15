@@ -1,4 +1,4 @@
-# Inventoro challenge
+# Input challenge
 
 This app is created via [create-react-app](https://www.npmjs.com/package/create-react-app). It dynamically addes inputs on the page.
 
@@ -12,8 +12,8 @@ This app is created via [create-react-app](https://www.npmjs.com/package/create-
 
 ### Usage
 ```
-git clone https://github.com/t-pyrope/news-platform.git
-cd news-platform
+git clone https://github.com/t-pyrope/input-challenge.git
+cd input-challenge
 npm install
 ```
 ### Running the website in the development mode
