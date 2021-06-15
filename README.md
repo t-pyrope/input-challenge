@@ -1,4 +1,4 @@
-# Inventoro challenge
+# Input challenge
 
 This app is created via [create-react-app](https://www.npmjs.com/package/create-react-app). It dynamically addes inputs on the page.
 
