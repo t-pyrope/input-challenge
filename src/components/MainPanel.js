@@ -7,7 +7,7 @@ const MainPanel = () => {
 
     return (
         <div>
-            {inputs.length ? <h1>Your inputs:</h1> : <h1>Add input fields</h1>}
+            <h1>{inputs.length ? 'Your inputs:' : 'Add input fields'}</h1>
             {inputs && (
                 <div>
                     {inputs
