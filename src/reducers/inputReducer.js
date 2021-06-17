@@ -22,6 +22,11 @@ const inputReducer = (state = initState, action) => {
                     (input) => input.id !== action.payload.id,
                 ),
             };
+        case 'DELETE_ALL':
+            return {
+                ...state,
+                inputs: [],
+            };
         default:
             return { ...state };
     }

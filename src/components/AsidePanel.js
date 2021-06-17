@@ -42,6 +42,12 @@ const AsidePanel = () => {
                 >
                     Add range field
                 </button>
+                <button
+                    className='button button_add'
+                    onClick={() => inputHandler('email')}
+                >
+                    Add email field
+                </button>
             </div>
         </div>
     );

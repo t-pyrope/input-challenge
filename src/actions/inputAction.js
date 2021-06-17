@@ -18,3 +18,9 @@ export const deleteInput = (id) => {
         },
     };
 };
+
+export const deleteAll = () => {
+    return {
+        type: 'DELETE_ALL',
+    };
+};

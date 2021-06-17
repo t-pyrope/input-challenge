@@ -9,7 +9,7 @@ import emoji from 'random-happy-emoji';
 const Input = ({ type, id }) => {
     const [inputValue, setInputValue] = useState('');
     const dispatch = useDispatch();
-    const [inputLabel, setInputLabel] = useState();
+    const [inputLabel, setInputLabel] = useState('');
 
     useEffect(() => {
         setInputLabel(
@@ -67,7 +67,15 @@ const Input = ({ type, id }) => {
                 <button
                     className='button button_small input__submit'
                     type='submit'
-                    disabled={!inputValue}
+                    disabled={
+                        !inputValue ||
+                        !(
+                            type === 'email' &&
+                            inputValue.match(
+                                /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/,
+                            )
+                        )
+                    }
                 >
                     Console.log it!
                 </button>

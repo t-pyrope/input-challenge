@@ -3,6 +3,10 @@
     border-radius: 0.3rem;
     transition: background-color 300ms ease;
     letter-spacing: 0.02rem;
+    font-size: 1rem;
+    background-color: transparent;
+    color: $dark-blue;
+
     &_add {
         color: white;
         padding: 0.5rem 1rem;

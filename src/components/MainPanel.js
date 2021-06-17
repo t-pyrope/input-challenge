@@ -1,14 +1,32 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Input from './Input';
+import { deleteAll } from '../actions/inputAction';
 
 const MainPanel = () => {
     const { inputs } = useSelector((store) => store.input);
+    const dispatch = useDispatch();
+
+    const deleteAllHandler = () => {
+        dispatch(deleteAll());
+    };
 
     return (
         <div>
-            <h1>{inputs.length ? 'Your inputs:' : 'Add input fields'}</h1>
-            {inputs && (
+            <div className='header'>
+                <h1>Input challenge</h1>
+                {inputs.length ? (
+                    <button
+                        className='button'
+                        onClick={() => deleteAllHandler()}
+                    >
+                        <b>(delete all)</b>
+                    </button>
+                ) : (
+                    ''
+                )}
+            </div>
+            {inputs.length ? (
                 <div>
                     {inputs
                         .slice()
@@ -22,6 +40,8 @@ const MainPanel = () => {
                             />
                         ))}
                 </div>
+            ) : (
+                ''
             )}
         </div>
     );

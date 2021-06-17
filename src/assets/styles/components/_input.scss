@@ -32,7 +32,8 @@
     input[type='text'],
     input[type='number'],
     input[type='color'],
-    input[type='date'] {
+    input[type='date'],
+    input[type='email'] {
         -webkit-appearance: none;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -47,6 +48,10 @@
         &:focus {
             outline: none;
             border-width: 2px;
+        }
+
+        &:invalid {
+            border-color: $red;
         }
     }
 
