@@ -42,7 +42,7 @@ const Input = ({ type, id }) => {
     const formSubmitHandler = (e) => {
         e.preventDefault();
         console.log(inputValue);
-        if (type === 'text' || type === 'number') setInputValue('');
+        if (['text', 'number', 'email'].includes(type)) setInputValue('');
     };
 
     return (
@@ -69,12 +69,10 @@ const Input = ({ type, id }) => {
                     type='submit'
                     disabled={
                         !inputValue ||
-                        !(
-                            type === 'email' &&
-                            inputValue.match(
+                        (type === 'email' &&
+                            !inputValue.match(
                                 /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/,
-                            )
-                        )
+                            ))
                     }
                 >
                     Console.log it!

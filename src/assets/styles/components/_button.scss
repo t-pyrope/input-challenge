@@ -30,13 +30,12 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: 1rem;
-        background-color: $grey;
         position: absolute;
         top: 1rem;
         right: 1rem;
 
         &:hover {
-            background-color: $grey-2;
+            background-color: $grey;
         }
     }
 
