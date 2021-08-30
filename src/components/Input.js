@@ -3,24 +3,12 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteInput } from '../actions/inputAction';
 import randomColor from 'randomcolor';
-import randomWords from 'random-words';
-import emoji from 'random-happy-emoji';
 
-const Input = ({ type, id }) => {
+const Input = ({ type, id, label }) => {
     const [inputValue, setInputValue] = useState('');
-    const dispatch = useDispatch();
-    const [inputLabel, setInputLabel] = useState('');
+    const [isDisabled, setIsDisabled] = useState(true);
 
-    useEffect(() => {
-        setInputLabel(
-            `${emoji()} ${
-                randomWords({
-                    exactly: 1,
-                    wordsPerString: 2,
-                })[0]
-            }`,
-        );
-    }, [setInputLabel]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (type === 'color') {
@@ -30,6 +18,12 @@ const Input = ({ type, id }) => {
             setInputValue('50');
         }
     }, [setInputValue, type]);
+
+    useEffect(() => {
+        if (!inputValue || (type === 'email' &&
+            !inputValue.match(/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/)
+        )) { setIsDisabled(true); } else { setIsDisabled(false) }
+    }, [inputValue, type]);
 
     const deleteInputHandler = () => {
         dispatch(deleteInput(id));
@@ -49,7 +43,7 @@ const Input = ({ type, id }) => {
         <form className='input' onSubmit={(e) => formSubmitHandler(e)}>
             <header className='input__header'>
                 <h4>
-                    {inputLabel} <span className='input__span'>({type})</span>
+                    {label} <span className='input__span'>({type})</span>
                 </h4>
                 <button
                     aria-label='delete'
@@ -67,13 +61,7 @@ const Input = ({ type, id }) => {
                 <button
                     className='button button_small input__submit'
                     type='submit'
-                    disabled={
-                        !inputValue ||
-                        (type === 'email' &&
-                            !inputValue.match(
-                                /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/,
-                            ))
-                    }
+                    disabled={isDisabled}
                 >
                     Console.log it!
                 </button>

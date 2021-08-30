@@ -36,7 +36,7 @@ const MainPanel = () => {
                                 key={input.id}
                                 id={input.id}
                                 type={input.type}
-                                inputName={input.inputName}
+                                label={input.label}
                             />
                         ))}
                 </div>

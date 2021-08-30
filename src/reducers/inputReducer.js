@@ -1,3 +1,6 @@
+import randomWords from 'random-words';
+import emoji from 'random-happy-emoji';
+
 const initState = {
     inputs: [],
 };
@@ -12,6 +15,7 @@ const inputReducer = (state = initState, action) => {
                     {
                         type: action.payload.type,
                         id: action.payload.id,
+                        label: `${ emoji() } ${ randomWords({ exactly: 1, wordsPerString: 2 })[0] }`
                     },
                 ],
             };
