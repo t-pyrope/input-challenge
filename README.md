@@ -4,11 +4,6 @@ Link: [input challenge app on gh-pages](https://t-pyrope.github.io/input-challen
 
 This app is created via [create-react-app](https://www.npmjs.com/package/create-react-app). It dynamically addes inputs on the page.
 
-It's my solution to a test assignment from [Inventoro](https://inventoro.com/)
-
-*some adds*
-> Inventoro — Sales forecasting and inventory management like the big players!
-
 ### Some of additionally used modules:
 * [redux](https://www.npmjs.com/package/redux) and [react-redux](https://www.npmjs.com/package/react-redux) to store the data 
 * [random-happy-emoji](https://www.npmjs.com/package/random-happy-emoji) and [random-words](https://www.npmjs.com/package/random-words) to create headers
