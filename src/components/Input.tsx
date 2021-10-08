@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../helpers/hooks';
 import { deleteInput } from '../actions/inputAction';
 import randomColor from 'randomcolor';
 
@@ -14,7 +14,7 @@ const Input = ({ type, id, label }: InputProps) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if (type === 'color') {

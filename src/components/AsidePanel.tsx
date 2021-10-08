@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../helpers/hooks';
 import { addInput } from '../actions/inputAction';
 
 const AsidePanel: React.FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const inputHandler = (type: string): void => {
         dispatch(addInput(type));
