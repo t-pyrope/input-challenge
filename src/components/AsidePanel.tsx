@@ -1,20 +1,21 @@
-import React from 'react';
+import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { addInput } from '../actions/inputAction';
 
-const AsidePanel = () => {
+const AsidePanel: React.FC = () => {
     const dispatch = useDispatch();
 
-    const inputHandler = (type) => {
+    const inputHandler = (type: string): void => {
         dispatch(addInput(type));
     };
 
     return (
         <div>
-            <div className='container'>
+            <div className='container' >
                 <button
                     className='button button_add'
-                    onClick={() => inputHandler('text')}
+                    onClick={() => inputHandler('text')
+                    }
                 >
                     Add text field
                 </button>

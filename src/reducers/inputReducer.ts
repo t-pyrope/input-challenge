@@ -1,32 +1,38 @@
+import { AnyAction } from 'redux';
+
 import randomWords from 'random-words';
 import emoji from 'random-happy-emoji';
+import { v4 as uuid_v4 } from 'uuid';
 
-const initState = {
+import { ADD_INPUT, DELETE_INPUT, DELETE_ALL } from '../actions/actionTypes';
+import { InputState } from './types';
+
+const initState: InputState = {
     inputs: [],
 };
 
-const inputReducer = (state = initState, action) => {
+const inputReducer = (state: InputState = initState, action: AnyAction): InputState => {
     switch (action.type) {
-        case 'ADD_INPUT':
+        case ADD_INPUT:
             return {
                 ...state,
                 inputs: [
                     ...state.inputs,
                     {
                         type: action.payload.type,
-                        id: action.payload.id,
-                        label: `${ emoji() } ${ randomWords({ exactly: 1, wordsPerString: 2 })[0] }`
+                        id: uuid_v4(),
+                        label: `${emoji()} ${randomWords({ exactly: 1, wordsPerString: 2 })[0]}`
                     },
                 ],
             };
-        case 'DELETE_INPUT':
+        case DELETE_INPUT:
             return {
                 ...state,
                 inputs: state.inputs.filter(
                     (input) => input.id !== action.payload.id,
                 ),
             };
-        case 'DELETE_ALL':
+        case DELETE_ALL:
             return {
                 ...state,
                 inputs: [],

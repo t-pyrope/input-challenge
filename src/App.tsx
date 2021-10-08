@@ -2,9 +2,9 @@ import React from 'react';
 import AsidePanel from './components/AsidePanel';
 import MainPanel from './components/MainPanel';
 
-function App() {
+const App: React.FC = () => {
     return (
-        <div className='App'>
+        <div className='App' >
             <AsidePanel />
             <MainPanel />
         </div>

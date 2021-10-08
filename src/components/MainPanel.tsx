@@ -1,11 +1,17 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../helpers/hooks';
 import Input from './Input';
 import { deleteAll } from '../actions/inputAction';
 
-const MainPanel = () => {
-    const { inputs } = useSelector((store) => store.input);
-    const dispatch = useDispatch();
+interface InputInterface {
+    type: string,
+    id: string,
+    label: string,
+}
+
+const MainPanel: React.FC = () => {
+    const { inputs } = useAppSelector((store) => store.input);
+    const dispatch = useAppDispatch();
 
     const deleteAllHandler = () => {
         dispatch(deleteAll());
@@ -31,7 +37,7 @@ const MainPanel = () => {
                     {inputs
                         .slice()
                         .reverse()
-                        .map((input) => (
+                        .map((input: InputInterface) => (
                             <Input
                                 key={input.id}
                                 id={input.id}

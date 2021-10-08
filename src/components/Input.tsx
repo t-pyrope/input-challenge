@@ -4,7 +4,13 @@ import { useDispatch } from 'react-redux';
 import { deleteInput } from '../actions/inputAction';
 import randomColor from 'randomcolor';
 
-const Input = ({ type, id, label }) => {
+export interface InputProps {
+    type: string,
+    id: string,
+    label: string
+}
+
+const Input = ({ type, id, label }: InputProps) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
 
@@ -12,7 +18,7 @@ const Input = ({ type, id, label }) => {
 
     useEffect(() => {
         if (type === 'color') {
-            setInputValue(randomColor);
+            setInputValue(randomColor());
         }
         if (type === 'range') {
             setInputValue('50');
@@ -29,13 +35,12 @@ const Input = ({ type, id, label }) => {
         dispatch(deleteInput(id));
     };
 
-    const inputValueHandler = (e) => {
+    const inputValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
     };
 
-    const formSubmitHandler = (e) => {
+    const formSubmitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        console.log(inputValue);
         if (['text', 'number', 'email'].includes(type)) setInputValue('');
     };
 
