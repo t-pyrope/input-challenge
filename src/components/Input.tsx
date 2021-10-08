@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useAppDispatch } from '../helpers/hooks';
-import { deleteInput } from '../actions/inputAction';
 import randomColor from 'randomcolor';
+
+import { deleteInput } from '../actions/inputAction';
+
+import { useAppDispatch } from '../helpers/hooks';
+import { formatDate } from '../helpers/functions';
 
 export interface InputProps {
     type: string,
@@ -22,6 +24,10 @@ const Input = ({ type, id, label }: InputProps) => {
         }
         if (type === 'range') {
             setInputValue('50');
+        }
+        if (type === "date") {
+            let now = new Date();
+            setInputValue(formatDate(now));
         }
     }, [setInputValue, type]);
 
@@ -73,11 +79,6 @@ const Input = ({ type, id, label }: InputProps) => {
             </div>
         </form>
     );
-};
-
-Input.propTypes = {
-    type: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
 };
 
 export default Input;
