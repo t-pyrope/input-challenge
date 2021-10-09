@@ -33,7 +33,7 @@
         "tsc:w": "tsc -w",
         "eslint": "node_modules/.bin/eslint src/",
         "lint": "eslint --debug src/",
-        "lint:write": "eslint --debug src/ --fix",
+        "lint:write": "eslint --debug src/ --fix"
     },
     "eslintConfig": {
         "extends": [
