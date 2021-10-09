@@ -8,6 +8,7 @@
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
         "@types/redux": "^3.6.0",
+        "eslint-config-prettier": "^8.3.0",
         "node-sass": "^4.14.1",
         "prop-types": "^15.7.2",
         "random-happy-emoji": "^2.0.3",
@@ -18,6 +19,7 @@
         "react-redux": "^7.2.4",
         "react-scripts": "4.0.3",
         "redux": "^4.1.0",
+        "uuid": "^8.3.2",
         "uuidv4": "^6.2.10",
         "web-vitals": "^1.0.1"
     },
@@ -28,7 +30,9 @@
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
-        "tsc:w": "tsc -w"
+        "tsc:w": "tsc -w",
+        "precommit": "lint-staged",
+        "eslint": "node_modules/.bin/eslint src/"
     },
     "eslintConfig": {
         "extends": [
@@ -56,7 +60,29 @@
         "@types/react-dom": "^17.0.9",
         "@types/react-redux": "^7.1.18",
         "@types/react-router-dom": "^5.3.1",
+        "@typescript-eslint/eslint-plugin": "^4.4.0",
+        "@typescript-eslint/parser": "^4.4.0",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-typescript": "^14.0.1",
+        "eslint-plugin-import": "^2.24.2",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.26.1",
+        "eslint-plugin-react-hooks": "^4.2.0",
         "gh-pages": "^3.2.1",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.2.0",
+        "prettier": "2.4.1",
         "typescript": "^4.4.3"
+    },
+    "resolutions": {
+        "@typescript-eslint/eslint-plugin": "^4.4.0",
+        "@typescript-eslint/parser": "^4.4.0"
+    },
+    "lint-staged": {
+        "*.{ts, tsx}": [
+            "node_modules/.bin/eslint --max-warnings=0",
+            "prettier --write",
+            "git add"
+        ]
     }
 }

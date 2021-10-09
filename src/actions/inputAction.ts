@@ -7,26 +7,20 @@ import {
     DeleteAllAction,
 } from './types';
 
-export const addInput = (type: string): AddInputAction => {
-    return {
-        type: ADD_INPUT,
-        payload: {
-            type: type
-        },
-    };
-};
+export const addInput = (type: string): AddInputAction => ({
+    type: ADD_INPUT,
+    payload: {
+        type
+    },
+});
 
-export const deleteInput = (id: string): DeleteInputAction => {
-    return {
-        type: DELETE_INPUT,
-        payload: {
-            id: id,
-        },
-    };
-};
+export const deleteInput = (id: string): DeleteInputAction => ({
+    type: DELETE_INPUT,
+    payload: {
+        id,
+    },
+});
 
-export const deleteAll = (): DeleteAllAction => {
-    return {
-        type: DELETE_ALL,
-    };
-};
+export const deleteAll = (): DeleteAllAction => ({
+    type: DELETE_ALL,
+});

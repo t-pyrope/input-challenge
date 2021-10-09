@@ -4,15 +4,15 @@ import randomColor from 'randomcolor';
 import { deleteInput } from '../actions/inputAction';
 
 import { useAppDispatch } from '../helpers/hooks';
-import { formatDate } from '../helpers/functions';
+import formatDate from '../helpers/functions';
 
-export interface InputProps {
+interface InputProps {
     type: string,
     id: string,
     label: string
 }
 
-const Input = ({ type, id, label }: InputProps) => {
+const Input = ({ type, id, label }: InputProps): React.ReactElement => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
 
@@ -25,16 +25,16 @@ const Input = ({ type, id, label }: InputProps) => {
         if (type === 'range') {
             setInputValue('50');
         }
-        if (type === "date") {
-            let now = new Date();
+        if (type === 'date') {
+            const now = new Date();
             setInputValue(formatDate(now));
         }
     }, [setInputValue, type]);
 
     useEffect(() => {
-        if (!inputValue || (type === 'email' &&
-            !inputValue.match(/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/)
-        )) { setIsDisabled(true); } else { setIsDisabled(false) }
+        if (!inputValue || (type === 'email'
+            && !inputValue.match(/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/)
+        )) { setIsDisabled(true); } else { setIsDisabled(false); }
     }, [inputValue, type]);
 
     const deleteInputHandler = () => {
@@ -51,27 +51,33 @@ const Input = ({ type, id, label }: InputProps) => {
     };
 
     return (
-        <form className='input' onSubmit={(e) => formSubmitHandler(e)}>
-            <header className='input__header'>
+        <form className="input" onSubmit={(e) => formSubmitHandler(e)}>
+            <header className="input__header">
                 <h4>
-                    {label} <span className='input__span'>({type})</span>
+                    {label}
+                    {' '}
+                    <span className="input__span">
+                        (
+                        {type}
+                        )
+                    </span>
                 </h4>
                 <button
-                    aria-label='delete'
-                    type='button'
-                    className='button button_trash'
+                    aria-label="delete"
+                    type="button"
+                    className="button button_trash"
                     onClick={() => deleteInputHandler()}
-                ></button>
+                />
             </header>
-            <div className='input__body'>
+            <div className="input__body">
                 <input
                     type={type}
                     value={inputValue}
                     onChange={(e) => inputValueHandler(e)}
                 />
                 <button
-                    className='button button_small input__submit'
-                    type='submit'
+                    className="button button_small input__submit"
+                    type="submit"
                     disabled={isDisabled}
                 >
                     Console.log it!
