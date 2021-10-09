@@ -31,8 +31,9 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
         "tsc:w": "tsc -w",
-        "precommit": "lint-staged",
-        "eslint": "node_modules/.bin/eslint src/"
+        "eslint": "node_modules/.bin/eslint src/",
+        "lint": "eslint --debug src/",
+        "lint:write": "eslint --debug src/ --fix",
     },
     "eslintConfig": {
         "extends": [
@@ -77,6 +78,11 @@
     "resolutions": {
         "@typescript-eslint/eslint-plugin": "^4.4.0",
         "@typescript-eslint/parser": "^4.4.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "lint-staged": {
         "*.{ts, tsx}": [
