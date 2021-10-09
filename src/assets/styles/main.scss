@@ -15,6 +15,8 @@ body {
     font-family: 'PT Sans Narrow', sans-serif;
     color: $dark-grey;
     background: $light-grey;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 button {
