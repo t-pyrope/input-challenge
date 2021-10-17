@@ -1,11 +1,15 @@
 import React from 'react';
+import Header from './components/Header';
 import AsidePanel from './components/AsidePanel';
 import MainPanel from './components/MainPanel';
 
 const App: React.FC = () => (
     <div className='App' >
-        <AsidePanel />
-        <MainPanel />
+        <Header />
+        <div className="main">
+            <AsidePanel />
+            <MainPanel />
+        </div>
     </div>
 )
 
