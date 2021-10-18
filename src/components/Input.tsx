@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import randomColor from 'randomcolor';
+import { motion } from 'framer-motion';
 
 import { deleteInput } from '../actions/inputAction';
 
@@ -47,11 +48,24 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
 
     const formSubmitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault();
+        // eslint-disable-next-line no-console
+        console.log(inputValue);
         if (['text', 'number', 'email'].includes(type)) setInputValue('');
     };
 
     return (
-        <form className="input" onSubmit={(e) => formSubmitHandler(e)}>
+        <motion.form
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 20
+            }}
+            exit={{ opacity: 0, x: 50, transition: {duration: 0.4} }}
+            className="input"
+            onSubmit={(e) => formSubmitHandler(e)}
+        >
             <header className="input__header">
                 <h4>
                     {label}
@@ -83,7 +97,7 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
                     Console.log it!
                 </button>
             </div>
-        </form>
+        </motion.form>
     );
 };
 
