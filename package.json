@@ -56,6 +56,7 @@
         ]
     },
     "devDependencies": {
+        "@types/jest": "^27.0.2",
         "@types/node": "^16.10.3",
         "@types/random-words": "^1.1.2",
         "@types/randomcolor": "^0.5.6",
@@ -63,6 +64,7 @@
         "@types/react-dom": "^17.0.9",
         "@types/react-redux": "^7.1.18",
         "@types/react-router-dom": "^5.3.1",
+        "@types/redux-mock-store": "^1.0.3",
         "@typescript-eslint/eslint-plugin": "^4.4.0",
         "@typescript-eslint/parser": "^4.4.0",
         "eslint": "^7.32.0",
@@ -75,6 +77,8 @@
         "husky": "^4.3.8",
         "lint-staged": "^11.2.0",
         "prettier": "2.4.1",
+        "redux-mock-store": "^1.5.4",
+        "ts-jest": "^27.0.7",
         "typescript": "^4.4.3"
     },
     "resolutions": {
