@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../helpers/hooks';
 import { addInput } from '../actions/inputAction';
 import AddButton from './AddButton';
 
 const AsidePanel: React.FC = () => {
     const dispatch = useAppDispatch();
+    const { t } = useTranslation();
 
     const inputHandler = (type: string): void => {
         dispatch(addInput(type));
@@ -14,34 +16,40 @@ const AsidePanel: React.FC = () => {
         <div>
             <div className='container'>
                 <AddButton
-                    text="Add text field"
-                    onClick={() => inputHandler('text')}
+                    text={t('addTextField')}
+                    onClick={inputHandler}
                     delay={0}
+                    type="text"
                 />
                 <AddButton
-                    text="Add number field"
-                    onClick={() => inputHandler('number')}
+                    text={t('addNumberField')}
+                    onClick={inputHandler}
                     delay={0.2}
+                    type="number"
                 />
                 <AddButton
-                    text="Add color field"
-                    onClick={() => inputHandler('color')}
+                    text={t('addColorField')}
+                    onClick={inputHandler}
                     delay={0.4}
+                    type="color"
                 />
                 <AddButton
-                    text="Add date field"
-                    onClick={() => inputHandler('date')}
+                    text={t('addDateField')}
+                    onClick={inputHandler}
                     delay={0.6}
+                    type="date"
                 />
                 <AddButton
-                    text="Add range field"
-                    onClick={() => inputHandler('range')}
+                    text={t('addRangeField')}
+                    onClick={inputHandler}
                     delay={0.8}
+                    type="range"
                 />
                 <AddButton
-                    text="Add email field"
-                    onClick={() => inputHandler('email')}
+                    text={t('addEmailField')}
+                    onClick={inputHandler}
                     delay={1}
+                    type="email"
                 />
             </div>
         </div>

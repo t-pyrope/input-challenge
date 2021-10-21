@@ -3,8 +3,16 @@
     flex-wrap: wrap;
     gap: 0.5rem;
 
+    &_start {
+        justify-content: flex-start;
+        align-items: baseline;
+    }
     @media (min-width: 640px) {
         padding: 1.5rem;
         gap: 0.5rem;
+
+        &_start {
+            padding: 0 1.5rem;
+        }
     }
 }

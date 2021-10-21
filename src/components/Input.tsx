@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import randomColor from 'randomcolor';
 import { motion } from 'framer-motion';
 
@@ -16,6 +17,8 @@ interface InputProps {
 const Input = ({ type, id, label }: InputProps): React.ReactElement => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
+
+    const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
 
@@ -37,6 +40,8 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
             && !inputValue.match(/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/)
         )) { setIsDisabled(true); } else { setIsDisabled(false); }
     }, [inputValue, type]);
+
+    const getType = (value: string): string => t(value)
 
     const deleteInputHandler = () => {
         dispatch(deleteInput(id));
@@ -72,7 +77,7 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
                     {' '}
                     <span className="input__span">
                         (
-                        {type}
+                        {getType(type)}
                         )
                     </span>
                 </h4>
