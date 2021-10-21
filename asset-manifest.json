@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/input-challenge/static/css/main.ee18c5bd.chunk.css",
-    "main.js": "/input-challenge/static/js/main.ee076844.chunk.js",
-    "main.js.map": "/input-challenge/static/js/main.ee076844.chunk.js.map",
+    "main.css": "/input-challenge/static/css/main.dec79f2d.chunk.css",
+    "main.js": "/input-challenge/static/js/main.9870ed1e.chunk.js",
+    "main.js.map": "/input-challenge/static/js/main.9870ed1e.chunk.js.map",
     "runtime-main.js": "/input-challenge/static/js/runtime-main.a3575075.js",
     "runtime-main.js.map": "/input-challenge/static/js/runtime-main.a3575075.js.map",
-    "static/js/2.d55a690d.chunk.js": "/input-challenge/static/js/2.d55a690d.chunk.js",
-    "static/js/2.d55a690d.chunk.js.map": "/input-challenge/static/js/2.d55a690d.chunk.js.map",
+    "static/js/2.ac11a8f2.chunk.js": "/input-challenge/static/js/2.ac11a8f2.chunk.js",
+    "static/js/2.ac11a8f2.chunk.js.map": "/input-challenge/static/js/2.ac11a8f2.chunk.js.map",
     "index.html": "/input-challenge/index.html",
-    "static/css/main.ee18c5bd.chunk.css.map": "/input-challenge/static/css/main.ee18c5bd.chunk.css.map",
-    "static/js/2.d55a690d.chunk.js.LICENSE.txt": "/input-challenge/static/js/2.d55a690d.chunk.js.LICENSE.txt"
+    "static/css/main.dec79f2d.chunk.css.map": "/input-challenge/static/css/main.dec79f2d.chunk.css.map",
+    "static/js/2.ac11a8f2.chunk.js.LICENSE.txt": "/input-challenge/static/js/2.ac11a8f2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a3575075.js",
-    "static/js/2.d55a690d.chunk.js",
-    "static/css/main.ee18c5bd.chunk.css",
-    "static/js/main.ee076844.chunk.js"
+    "static/js/2.ac11a8f2.chunk.js",
+    "static/css/main.dec79f2d.chunk.css",
+    "static/js/main.9870ed1e.chunk.js"
   ]
 }
