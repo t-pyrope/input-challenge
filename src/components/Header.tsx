@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
-import { useAppDispatch, useAppSelector } from '../helpers/hooks';
 import { deleteAll } from '../actions/inputAction';
+import { RootState } from '../reducers/types';
 
 const Header: React.FC = () => {
     const [lang, setLang] = useState('en');
-    const { inputs } = useAppSelector((store) => store.input);
-    const dispatch = useAppDispatch();
+    const { inputs } = useSelector((state: RootState) => state.input);
+    const dispatch = useDispatch();
     const { t } = useTranslation();
 
     const changeLanguage = (lng: string): void => {

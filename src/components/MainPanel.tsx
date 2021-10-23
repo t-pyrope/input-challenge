@@ -1,17 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
 
-import { useAppSelector } from '../helpers/hooks';
 import Input from './Input';
-
-interface InputInterface {
-    type: string,
-    id: string,
-    label: string,
-}
+import { InputInterface, RootState } from '../reducers/types';
 
 const MainPanel: React.FC = () => {
-    const { inputs } = useAppSelector((store) => store.input);
+    const { inputs } = useSelector((store: RootState) => store.input);
 
     return (
         <div>

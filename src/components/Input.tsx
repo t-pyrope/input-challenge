@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import randomColor from 'randomcolor';
 import { motion } from 'framer-motion';
 
 import { deleteInput } from '../actions/inputAction';
 
-import { useAppDispatch } from '../helpers/hooks';
 import formatDate from '../helpers/functions';
 
 interface InputProps {
@@ -20,7 +20,7 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
 
     const { t } = useTranslation();
 
-    const dispatch = useAppDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (type === 'color') {

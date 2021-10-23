@@ -17,14 +17,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as typeof c
 
 const store = createStore(rootReducer, composeEnhancers());
 
-// "Whatever is being returned from store.getState, I want the types stored ad the RootState variable" 
-// https://stackoverflow.com/a/67656911/13891817
-export type RootState = ReturnType<typeof store.getState>
-
-// "Get the dispatch object from the store, break it down into it's types, and store it in the AppDispatch variable"
-// https://stackoverflow.com/a/67656911/13891817
-export type AppDispatch = typeof store.dispatch;
-
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store} >

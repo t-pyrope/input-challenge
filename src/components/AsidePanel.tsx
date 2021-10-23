@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from '../helpers/hooks';
 import { addInput } from '../actions/inputAction';
 import AddButton from './AddButton';
 
 const AsidePanel: React.FC = () => {
-    const dispatch = useAppDispatch();
+    const dispatch = useDispatch();
     const { t } = useTranslation();
 
     const inputHandler = (type: string): void => {
