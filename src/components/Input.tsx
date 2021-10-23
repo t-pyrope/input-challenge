@@ -58,6 +58,10 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
         if (['text', 'number', 'email'].includes(type)) setInputValue('');
     };
 
+    const onDragEnd = () => {
+        dispatch(deleteInput(id));
+    }
+
     return (
         <motion.form
             initial={{ x: -50, opacity: 0 }}
@@ -67,9 +71,12 @@ const Input = ({ type, id, label }: InputProps): React.ReactElement => {
                 stiffness: 200,
                 damping: 20
             }}
-            exit={{ opacity: 0, x: 50, transition: {duration: 0.4} }}
+            exit={{ opacity: 0, transition: {duration: 0.3} }}
             className="input"
             onSubmit={(e) => formSubmitHandler(e)}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={onDragEnd}
         >
             <header className="input__header">
                 <h4>
