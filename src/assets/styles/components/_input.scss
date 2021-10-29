@@ -48,11 +48,12 @@
 
         &:focus {
             outline: none;
-            border-width: 2px;
+            border-color: $dark-grey-2;
         }
 
         &:invalid {
             border-color: $red;
+            border-width: 1px;
         }
     }
 
